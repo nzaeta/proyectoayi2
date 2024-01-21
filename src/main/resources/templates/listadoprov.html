@@ -11,13 +11,13 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="/formulario.css">
 </head>
 
 <body>
 <div class="container-fluid m-5 contenedor">
 
-    <h1 th:text="${titulo}">Titulo</h1>
+    <h1 th:text="${titulo}" text align="center">Titulo</h1>
 
     <br>
     <div th:if="${proveedores != null and !proveedores.empty}">
@@ -48,15 +48,21 @@
                 </td>
 
                 <td>
-                    <a th:href="@{/eliminarProveedor/__${proveedor.idProveedor}__}"><i class="fas fa-trash"> </i> Eliminar
-                    </a>
+                   <button class="btn btn-outline-success"> <a th:href="@{/editarProveedor/__${proveedor.idProveedor}__}" style="text-decoration: none; color: inherit;"><i class="fas fa-feather-alt"> </i> Modificar
+                    </a></button>
+
+                </td>
+
+                <td>
+                    <button class="btn btn-outline-danger"> <a th:href="@{/eliminarProveedor/__${proveedor.idProveedor}__}" style="text-decoration: none; color: inherit;"><i class="fas fa-trash"> </i> Eliminar
+                    </a></button>
                 </td>
             </tr>
         </table>
     </div>
     <section class="py-5 text-center container">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <a th:href="@{/nuevoProveedor}" class="btn btn-primary my-2">Nuevo Proveedor</a>
+                <a th:href="@{/nuevoProveedor}" class="btn btn-success my-3 btn-lg">Nuevo Proveedor</a>
                 </p>
             </div>
     </section>

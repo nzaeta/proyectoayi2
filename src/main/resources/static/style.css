@@ -1,9 +1,9 @@
-.div {
+body {
+ background: #E5FAEF;
+}
 
-display: flex;
-
-flex-dirección: columna;
-
-justify-content: center;
-
+h1{
+ color:#4C8166;
+ font-family: Segoe UI;
+ text align: center;
 }

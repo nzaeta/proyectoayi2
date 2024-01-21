@@ -28,7 +28,7 @@ public class ProveedorController {
     }
 
     @GetMapping("/eliminarProveedor/{id}")
-    public String eliminar(@PathVariable Integer id, Model model) {
+    public String eliminar(@PathVariable Integer id) {
         proveedorService.eliminar(id);
             return "redirect:../listadoprov";
     }
@@ -44,5 +44,13 @@ public class ProveedorController {
         proveedorService.crearProveedor(proveedor);
         return "redirect:/listadoprov";
     }
+
+    @GetMapping("/editarProveedor/{id}")
+    public String editarProveedor(@PathVariable int id, Model model) {
+        Proveedor proveedor = proveedorService.encontrarProveedor(id);
+        model.addAttribute("proveedor", proveedor);
+        return "proveedor_modificar.html";
+    }
+
 
 }

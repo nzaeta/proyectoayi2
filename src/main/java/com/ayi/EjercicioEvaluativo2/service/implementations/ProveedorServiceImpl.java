@@ -34,4 +34,11 @@ public class ProveedorServiceImpl implements IProveedorService {
         return proveedor;
     }
 
+    @Override
+    @Transactional
+    public Proveedor encontrarProveedor(int id) {
+        Proveedor proveedor = proveedorRepository.getReferenceById(id);
+        return proveedor;
+    }
+
 }
