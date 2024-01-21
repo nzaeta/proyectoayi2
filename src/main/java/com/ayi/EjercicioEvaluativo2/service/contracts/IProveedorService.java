@@ -9,4 +9,6 @@ public interface IProveedorService {
 
     public Proveedor crearProveedor(Proveedor proveedor);
     public void eliminar(Integer id);
+
+    public Proveedor encontrarProveedor(int id);
 }
