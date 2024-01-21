@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Nuevo Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+
+<div class="container-fluid m-5">
+
+    <form class="formulario" action="/guardarProveedor" method="post" th:object="${proveedor}">
+
+        <h3>CARGAR UN NUEVO PROVEEDOR</h3>
+
+
+        <input type="hidden" name="idProveedor" th:field="*{idProveedor}" />
+        <div class="form-group my-3">
+            <label>Nombre y Apellido: </label>
+            <input type="text" name="nombre" th:field="*{nombre}" required/>
+            <br/>
+        </div>
+        <div class="form-group my-3">
+            <label>Nº Teléfono: </label>
+            <input type="text" name="telefono" th:field="*{telefono}" required/>
+            <br/>
+        </div>
+        <div class="form-group my-3">
+            <label>Dirección: </label>
+            <input type="text" name="direccion" th:field="*{direccion}" required/>
+            <br/>
+        </div>
+        <div class="form-group my-3">
+            <label>E-mail: </label>
+            <input type="email" name="email" th:field="*{email}" required/>
+            <br/>
+        </div>
+        <div class="form-group my-3">
+            <label>Sitio Web: </label>
+            <input type="text" name="sitioWeb" th:field="*{sitioWeb}" required/>
+            <br/>
+        </div>
+        <div class="form-group my-3">
+            <label>Estado: </label>
+            <select id="seleccion" name="seleccion" th:field="*{estado}">
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+                <option value="3">Dado de Baja</option>
+            </select>
+
+<!--            <input type="number" name="estado" th:field="*{estado}" required/>-->
+            <br/>
+        </div>
+
+        <input type="submit" name="guardar" class="btn btn-primary mt-3 botones" value="Guardar"/>
+
+        <section class=" text-center container">
+            <div class="divVolver">
+                <a th:href="@{/listadoprov}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+            </div>
+        </section>
+
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>
